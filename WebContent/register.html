@@ -78,18 +78,17 @@ input[type=submit]:hover {
 	</script>
 <title>Sign Up</title>
 </head>
-<body>
+<body class = "bg" id = "cen">
 <div align = "center">
-	<form name = "reg" method = "Post" action = "regis" onsubmit = "return validation()">
-	Name of Hospital/Clinic: <input type = "text" name = "hosName">
-	Enter Email Id <input type = "email" name = "email">
-	Enter Hospital/clinic name <input type = "text" name = "hosName">
+	<form name = "reg" method = "Post" action = "regis" onsubmit = "return validation()"><b>
+	Name of Hospital/Clinic: <input type = "text" name = "hosName"><br></br>
+	Enter Email Id: <input type = "email" name = "email"><br></br>
 	<h4>Address: </h4>
-	<textarea rows = "4" cols = 40 name = "address" placeholder = "Enter your Adress..."></textarea>
-	Set Password <input type = "password" name = "pass"> <p id = "errlen" style = "color:red;" ></p>
-	Confirm Password <input type = "password" name = "Cpass"><br> <p id = "errMatch" style = "color:red;">
+	<textarea rows = "4" cols = 40 name = "address" placeholder = "Enter your Adress..."></textarea><br></br>
+	Set Password: <input type = "password" name = "pass"> <p id = "errlen" style = "color:red;" ></p><br></br>
+	Confirm Password: <input type = "password" name = "Cpass"><br> <p id = "errMatch" style = "color:red;"></p>
 	<p id = "errorid" style = "color:red;"></p>
-	<input type = "submit" value = "Register">
+	<input type = "submit" value = "Register"></b>
 	</form>
 </div>
 </body>

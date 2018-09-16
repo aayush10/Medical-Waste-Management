@@ -107,7 +107,7 @@ public class Login extends HttpServlet{
 		}
 		else {
 			req.setAttribute("err", flag);
-			RequestDispatcher rd = req.getRequestDispatcher("badLogin.jsp");
+			RequestDispatcher rd = req.getRequestDispatcher("badlogin.jsp");
 			rd.forward(req, res);
 		}
 	}

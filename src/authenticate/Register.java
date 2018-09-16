@@ -5,6 +5,8 @@ import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,7 +16,7 @@ import connectdb.MyDb;
 
 @WebServlet("/regis")
 public class Register extends HttpServlet{
-	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		MyDb conn = new MyDb();
 		PrintWriter out = res.getWriter();
 		conn.connect();
@@ -50,6 +52,7 @@ public class Register extends HttpServlet{
 				e.printStackTrace();
 			}
 		}
-		out.print("Welcome!");
+		RequestDispatcher rd = req.getRequestDispatcher("nopickup.jsp");
+		rd.forward(req, res);
 	}
 }
