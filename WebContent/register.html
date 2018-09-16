@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<style>
+#cen{
+	margin-top : 100px;
+}
+.bg{
+	background-image : url("hospital.jpg");
+	background-repeat :no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+input[type = text]{
+	width:12%;
+	padding: 11px 39px;
+	border : 1px solid #ccc;
+	border-radius: 4px;
+	margin: 8px 0;
+	display: inline-block;
+}
+input[type = email]{
+	width:12%;
+	padding: 11px 39px;
+	border : 1px solid #ccc;
+	border-radius: 4px;
+	 margin: 8px 0;
+	  display: inline-block;
+}
+input[type = password]{
+	width: 12%;
+	padding: 11px 39px;
+	border : 1px solid #ccc;
+	border-radius: 4px;
+	margin-left : 10px;
+}
+input[type = submit]{
+	width: 100px;
+	background-color: #4CAF50;
+	color: white;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+</style>
+<head>
+<meta charset="ISO-8859-1">
+<script>
+	function validation(){
+		var name = document.reg.hosName.value;
+		var email = document.reg.email.value;
+		var password = document.reg.pass.value;
+		var address = document.reg.address.value;
+		var confirmPass = document.reg.Cpass.value;
+		var hosName = document.reg.hosName.value;
+		 if(name =="" || email == "" || address == "" || password == "" || confirmPass == "" || hosName == ""){
+			 error = "All fields must be entered!";
+			 document.getElementById("errorid").innerHTML = error;
+			 return false; 
+		 }
+		 if(password.length<=6){
+			 error = "Password length must be greater than 6";
+			 document.getElementById("errlen").innerHTML = error;
+			 return false;
+		 }
+		 if(password!=confirmPass){
+			 error = "Passwords do not match!";
+			 document.getElementById("errMatch").innerHTML = error;
+			 return false;
+		 }
+		 return true;
+	}
+	</script>
+<title>Sign Up</title>
+</head>
+<body>
+<div align = "center">
+	<form name = "reg" method = "Post" action = "regis" onsubmit = "return validation()">
+	Name of Hospital/Clinic: <input type = "text" name = "hosName">
+	Enter Email Id <input type = "email" name = "email">
+	Enter Hospital/clinic name <input type = "text" name = "hosName">
+	<h4>Address: </h4>
+	<textarea rows = "4" cols = 40 name = "address" placeholder = "Enter your Adress..."></textarea>
+	Set Password <input type = "password" name = "pass"> <p id = "errlen" style = "color:red;" ></p>
+	Confirm Password <input type = "password" name = "Cpass"><br> <p id = "errMatch" style = "color:red;">
+	<p id = "errorid" style = "color:red;"></p>
+	<input type = "submit" value = "Register">
+	</form>
+</div>
+</body>
+</html>
